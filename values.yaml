@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: senceck/http_get_env
+  tag: v1
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8000
+
+deployment:
+  containerPort: 8000
+
+env:
+  - name: user_name
+    value: "sari"
